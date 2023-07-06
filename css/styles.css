@@ -276,6 +276,11 @@ p .text__pre
     -webkit-box-shadow: 4px 4px 10px 0px rgba(190,190,190,0.5);
     -moz-box-shadow: 4px 4px 10px 0px rgba(190,190,190,0.5);
 }
+.container__grid__center
+{
+    display: grid;
+    justify-items: center;
+}
 .card__title
 {
     padding: 0.5rem;
@@ -304,7 +309,7 @@ p .text__pre
 }
 .black__button
 {
-    width: 150px;
+    width: 150px !important;
     height: 35px;
     display: flex;
     margin-bottom: 2rem;
@@ -337,7 +342,13 @@ p .text__pre
     justify-items: center;
     padding: 2rem 0.2rem;
 }
-.contact__form > input, .contact__form > textarea
+.contact__form > div
+{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+.contact__form > div > input, .contact__form > div > textarea
 {
     width: 70%;
     padding: 0.5rem 1rem;
@@ -347,16 +358,31 @@ p .text__pre
     font-size: 16px;
     border-style: none none solid none;
 }
-.contact__form > textarea
+.contact__form > div > textarea
 {
     margin: 1.5rem 0;
     border-style: solid;
 }
-.contact__form > input:focus, .contact__form > textarea:focus
+.contact__form > div > input:focus, .contact__form > textarea:focus
 {
     color: var(--apple__black);
     background-color: var(--apple__white);
     outline: none;
+}
+.required__field
+{
+    border-color: #FF000066;
+    background-color: #FF000022 !important;
+}
+.required__field:focus
+{
+    color:var(--apple__white) !important;
+}
+.error__alert
+{
+    width: 70%;
+    text-align: left;
+    color: #FF0000;
 }
 .main__footer
 {

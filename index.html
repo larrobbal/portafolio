@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="./js/scripts.js" type="module"></script>
         <title>Roberto Valencia - Portafolio</title>
     </head>
     <body>
@@ -110,7 +112,7 @@
             <div class="info__container">
                 <h2 class="section__tittle">&lt; Experiencia en programación &gt;</h2>
                 <div class="grid__container__aux">
-                    <div>
+                    <div class="container__grid__center">
                         <div class="element__card dark">
                             <div class="card__title">Alura ONE - Encriptador</div>
                             <div class="card__media"><a href="https://larrobbal.github.io/encriptador-ONE/" target="_blank"><img src="assets/img/portfolio/encriptador.webp" alt="Encriptador Alura ONE"></a></div>
@@ -118,7 +120,7 @@
                         </div>
                         <div class="black__button"><a href="https://github.com/larrobbal/encriptador-ONE" target="_blank">Ver Repositorio</a></div>
                     </div>
-                    <div>
+                    <div class="container__grid__center">
                         <div class="element__card dark">
                             <div class="card__title">Viviendo con Diabetes</div>
                             <div class="card__media"><a href="https://larrobbal.github.io/viviendo-con-diabetes/" target="_blank"><img src="assets/img/portfolio/viviendo-con-diabetes.webp" alt="Viviendo con Diabetes"></a></div>
@@ -126,7 +128,7 @@
                         </div>
                         <div class="black__button"><a href="https://github.com/larrobbal/viviendo-con-diabetes" target="_blank">Ver Repositorio</a></div>
                     </div>
-                    <div>
+                    <div class="container__grid__center">
                         <div class="element__card dark">
                             <div class="card__title">Botes para Pilas - ComerZIA</div>
                             <div class="card__media"><a href="https://botesparapilas.com.mx/" target="_blank"><img src="assets/img/portfolio/botes-para-pilas copia.webp" alt="Botes para Pilas"></a></div>
@@ -134,7 +136,7 @@
                         </div>
                         <div class="black__button"><a href="https://github.com/larrobbal/botesparapilas" target="_blank">Ver Repositorio</a></div>
                     </div>
-                    <div>
+                    <div class="container__grid__center">
                         <div class="element__card dark">
                             <div class="card__title">Programa de Educación para Adultos - SISREGAA</div>
                             <div class="card__media"><img src="assets/img/portfolio/sisregaa.webp" alt="SISREGAA"></div>
@@ -149,11 +151,11 @@
             <div class="info__container">
                 <h2 class="section__tittle">&lt; Contacto &gt;</h2>
                 <div class="contact__form" id="contact__form">
-                    <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="E-mail">
-                    <input type="text" placeholder="Tema">
-                    <textarea name="" id="" cols="30" rows="15"></textarea>
-                    <div class="black__button"><a href="#">Enviar</a></div>
+                    <div><input name="name__form" type="text" id="name__form" placeholder="Nombre" required data-tipo="name" class="input__form" maxlength="50"><span class="error__alert"></span></div>
+                    <div><input name="email__form" type="email" id="email__form" placeholder="E-mail" required data-tipo="email" class="input__form" maxlength="50"><span class="error__alert"></span></div>
+                    <div><input name="subject__form" type="text" id="subject__form" placeholder="Tema" required data-tipo="subject" class="input__form" maxlength="50"><span class="error__alert"></span></div>
+                    <div><textarea name="message__form" id="message__form" cols="30" rows="10" required data-tipo="message" class="input__form"></textarea><span class="error__alert"></span></div>
+                    <div class="black__button"><a id="send__button" href="#">Enviar</a></div>
                 </div>
             </div>
         </section>
