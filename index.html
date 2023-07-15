@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/styles.css">
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <script src="./js/scripts.js" type="module"></script>
         <title>Roberto Valencia - Portafolio</title>
     </head>
@@ -48,10 +47,10 @@
             </div>
             <div class="desktop__container__aux">
                 <div class="social__networks">
-                    <div class="social__links"><a href="https://www.linkedin.com/in/luis-roberto-valencia-brise%C3%B1o-09723a25a/"><img class="social__link__logo" src="assets/img/linkedin.svg" alt="LinkedIn"></a></div>
-                    <div class="social__links"><a href="https://github.com/larrobbal"><img class="social__link__logo" src="assets/img/github.svg" alt="Github"></a></div>
-                    <div class="social__links"><a href="https://www.instagram.com/arrobb.a/"><img class="social__link__logo" src="assets/img/instagram.svg" alt="Instagram"></a></div>
-                    <div class="social__links"><a href="assets/docs/cv.pdf"><img class="social__link__logo" src="assets/img/curriculum.svg" alt="Curriculum"></a></div>
+                    <div class="social__links"><a href="https://www.linkedin.com/in/luis-roberto-valencia-brise%C3%B1o-09723a25a/"><img class="social__link__logo" src="assets/img/linkedin.svg" alt="LinkedIn" data-social="linkedin"></a></div>
+                    <div class="social__links"><a href="https://github.com/larrobbal"><img class="social__link__logo" src="assets/img/github.svg" alt="Github" data-social="github"></a></div>
+                    <div class="social__links"><a href="https://www.instagram.com/arrobb.a/"><img class="social__link__logo" src="assets/img/instagram.svg" alt="Instagram" data-social="instagram"></a></div>
+                    <div class="social__links"><a href="assets/docs/cv.pdf"><img class="social__link__logo" src="assets/img/curriculum.svg" alt="Curriculum" data-social="curriculum"></a></div>
                 </div>
             </div>
         </main>
@@ -156,6 +155,13 @@
                     <div><input name="subject__form" type="text" id="subject__form" placeholder="Tema" required data-tipo="subject" class="input__form" maxlength="50"><span class="error__alert"></span></div>
                     <div><textarea name="message__form" id="message__form" cols="30" rows="10" required data-tipo="message" class="input__form"></textarea><span class="error__alert"></span></div>
                     <div class="black__button"><a id="send__button" href="#">Enviar</a></div>
+                </div>
+            </div>
+            <div class="modal__layout" id="modal__layout"></div>
+            <div class="modal__div" id="modal__div">
+                <div class="modal__form" id="modal__form">
+                    <div>¡Su mensaje ha sido enviado con éxito!</div>
+                    <div class="black__button"><a href="#" id="modal__close__button">Cerrar</a></div>
                 </div>
             </div>
         </section>

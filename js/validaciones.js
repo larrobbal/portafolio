@@ -26,8 +26,32 @@ export function validateDataSend(inputs)
             valuer[inputType](input)
         }
         if(!input.validity.valid)
+        {
             input.parentElement.querySelector(".error__alert").innerHTML = showErrorMsg(inputType, input);
+        }
     });
+}
+
+export function showModal()
+{
+    if(Object.values(validArray).every(item => item === true))
+    {
+        let modalLayout = document.querySelector("#modal__layout");
+        let modalDiv = document.querySelector("#modal__div");
+        modalDiv.style.display = "flex";
+        modalLayout.style.display = "flex";
+        modalDiv.style.top = (window.scrollY+100)+"px";
+    }
+}
+
+export function closeModal(inputs)
+{
+    document.querySelector("#modal__div").style.display = "none";
+    document.querySelector("#modal__layout").style.display = "none";
+    inputs.forEach(input => {
+        input.value = "";
+    })
+
 }
 
 var characterRegName = new RegExp("^[a-zA-Z0-9\u00F1\u00D1]{3,50}$");
@@ -62,6 +86,14 @@ const errorMessages = {
     }
 }
 
+const validArray =
+{
+    name: false,
+    email: false,
+    subject: false,
+    message: false
+}
+
 function showErrorMsg(inputType, input)
 {
     let text = "";
@@ -73,53 +105,58 @@ function showErrorMsg(inputType, input)
     })
     return text;
 }
-function showErrorMsgSend()
-{
 
-}
 function validateName(name)
 {
     if(name.validity.valueMissing)
     {
-        if(!($("#name__form").hasClass("required__field")))
+        if(!(document.querySelector("#name__form").classList.contains("required__field")))
         {
-            $("#name__form").addClass("required__field");
+            document.querySelector("#name__form").classList.add("required__field");
             name.setCustomValidity("");
+            validArray.name=false;
         }    
     }
     else if(!characterRegName.test(name.value))
     {
-        if(!($("#name__form").hasClass("required__field")))
+        if(!(document.querySelector("#name__form").classList.contains("required__field")))
         {
-            $("#name__form").addClass("required__field");
+            document.querySelector("#name__form").classList.add("required__field");
             name.setCustomValidity("error");
+            validArray.name=false;
         }
     } 
     else if(characterRegName.test(name.value) && !name.validity.valueMissing)
+    {
         name.setCustomValidity("");
+        validArray.name=true;
+    }
 }
 
 function validateMail(email)
 {
     if(email.validity.valueMissing)
     {
-        if(!($("#email__form").hasClass("required__field")))
+        if(!(document.querySelector("#email__form").classList.contains("required__field")))
         {
-            $("#email__form").addClass("required__field");
+            document.querySelector("#email__form").classList.add("required__field");
             email.setCustomValidity("");
+            validArray.email=false;
         }    
     }
     else if(!emailRegEmail.test(email.value))
     {
-        if(!($("#email__form").hasClass("required__field")))
+        if(!(document.querySelector("#email__form").classList.contains("required__field")))
         {
-            $("#email__form").addClass("required__field");
+            document.querySelector("#email__form").classList.add("required__field");
             email.setCustomValidity("error");
+            validArray.email=false;
         }
     }
     else if(emailRegEmail.test(email.value) && !email.validity.valueMissing)
     {
         email.setCustomValidity("");
+        validArray.email=true;
     }
 }
 
@@ -127,20 +164,26 @@ function validateSubject(subject)
 {
     if(subject.validity.valueMissing)
     {
-        if(!($("subject__form").hasClass("required__field")))
+        if(!(document.querySelector("#subject__form").classList.contains("required__field")))
         {
-            $("#subject__form").addClass("required__field");
+            document.querySelector("#subject__form").classList.add("required__field");
+            validArray.subject = false;
         }    
     }
+    else
+        validArray.subject = true;
 }
 
 function validateMessage(message)
 {
     if(message.validity.valueMissing)
     {
-        if(!($("message__form").hasClass("required__field")))
+        if(!(document.querySelector("#message__form").classList.contains("required__field")))
         {
-            $("#message__form").addClass("required__field");
+            document.querySelector("#message__form").classList.add("required__field");
+            validArray.message = false;
         }
     }
+    else
+        validArray.message = true;
 }
