@@ -11,11 +11,12 @@
     <body>
         <nav class="main__nav">
             <div id="mobile__menu__toggle">
-                <input type="checkbox"/>
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul class="mobile__menu">
+                <button type="button" class="mobile__menu__button hamburger hamburger--slider" id="mobile__menu__button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <ul class="mobile__menu" id="mobile__menu">
                     <li><a href="#about__me">Acerca de mi</a></li>
                     <li><a href="#skills">Hobbies & Soft skills</a></li>
                     <li><a href="#education">Formación y cursos</a></li>
@@ -179,4 +180,5 @@
             </div>
         </footer>
     </body>
+    <link rel="stylesheet" href="css/hamburgers.css">
 </html>
